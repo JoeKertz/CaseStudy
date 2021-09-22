@@ -1,0 +1,47 @@
+I am attempting to recreate the blog site from scratch from Angela Yu's courseca test. We will be utilizing the following languages in order to create a server and
+create a dynamic web application that could be deployed on any server. First we will start with the file setup. 
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+FILE SETUP 
+1. Create "public" and "views" folders in the root directory along with an app.js file. 
+2. use the command npm install to install npm 
+3. use the command npm init to initialize npm
+4. use npm install express to install express
+5. use npm install body-parser to install body-parser
+6. use npm install ejs to install ejs 
+7. use npm install nodemon to install nodemon 
+7. enter the public folder and add a file called css then place a style.css file inside of it. 
+8. enter the views folder and add a place a home.ejs file inside of it. 
+9. in the views folder add a partials folder and put header.ejs and footer.ejs files in it. 
+10. Now that all of our files are setup, we are ready to start our app.js server and create a single home path. 
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+SERVER SETUP
+1. create your express, bodyParser and ejs variables. 
+2. set the variables equal to the require() to load the modules into the application. 
+3. set the app variable equal to express() to initialize the express module. 
+4. set app.get and pass in the path along with a req res function 
+5. inside of this function, set up a send response and send out a string "Hello, the server is working"
+6. set app.listen and pass the port (3000) along with a req,res function which will log "Listening on port 3000" 
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+TESTING SERVER SETUP 
+1. In the command line go to the project folder. 
+2. use the command npx nodemon app.js to start the server locally. 
+3. if the server has been setup correctly, the console should log out "Listening on port 3000" 
+4. In a web browser, type in localhost:3000 to view what is on your local server on port 3000
+5. if the server PATH has been setup correctly, it should display the text "Hello, the server is working"
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+ADDING OUR HOME.EJS FILE TO OUR HOME PATH 
+1. in app.set("view engine","ejs"); to initialize ejs
+2. in our app.get function, remove the res.send and write res.render(home);
+3. go into our views and open home.ejs 
+4. create a boilerplate html and add some sort of element for testing purposes. 
+5. reload localhost:3000 and see if the file that is served changes. 
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+CREATING A HEADER TEMPLATE WITH A NAVBAR
+1.in our partials folder select the header.ejs file and begin creating a navbar with bootstrap
+2. in our home.ejs file, link the header file to the home file for testing. 
+3. add app.use(express.static("public")); to the app.js file to load public static css files onto the server. 
+4. adjust the navbar to fit your style 😎
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+Now our project has been setup -  I will spend some time stylizing our blog with the following features:
+1. Navbar 
+2. ...
