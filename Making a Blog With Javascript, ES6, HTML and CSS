@@ -43,5 +43,5 @@ CREATING A HEADER TEMPLATE WITH A NAVBAR
 4. adjust the navbar to fit your style 😎
 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 Now our project has been setup -  I will spend some time stylizing our blog with the following features:
-1. Navbar 
+1. Navbar - along with server paths to all pages 
 2. ...
