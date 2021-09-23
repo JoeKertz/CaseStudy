@@ -1,0 +1,46 @@
+This is part two to buidling a blogging website, without further or ado, lets get right into it. 
+
+CREATING A COMPOSE.EJS FILE 
+
+1. create a compose.ejs file along with a route from our express server. 
+2. create a form that contains a text input and text area. Label them postTitle and postBody. 
+3. make sure to create a name for both of your inputs - this will be important later. 
+4.make sure your form method is set to POST 
+5. add some custom css and be sure to include your header and footer using ejs
+
+GRABBING THE TITLE AND CONTENT FROM THE COMPOSE FILE TO OUR SERVER
+
+1. set a variable of posts equal to an empty array.
+2. create a constant of post and set it to  title: req.body.postTitle,
+   content: req.body.postBody,
+3. then push post onto the posts array and redirect to the home page.
+4. for testing purposes log out the posts array to the console. 
+
+SENDING THE POST TO THE HOMEPAGE 
+
+1. In the app.get for the home route, after the home string, place a javscript object with the keys posts: posts,
+2. Using ejs create a posts.forEach function and place an h1 and a p in the function. 
+3. Then with an ejs tag place  <%= post.title %> in between the h1 tag and <%= post.content %> in between the <p> tag 
+
+SHORTENING THE POST TO A PREVIEW
+
+1. add the .substring(0,100) to the end of the post.title in the home.ejs file which will limit our post to only a preview in the home page. 
+
+CREATING A DYNAMIC LINK WITH LODASH IN OUR SERVER 
+##install lodash with the terminal##
+1. Create an app.get request and set the path equal to "/posts/:postName" then create a req,res function 
+2. create a constant requestedTitle and set it equal to _.lowerCase(req.params.postName); this will set requested title to the requested from the user 
+3. access our posts array and add a forEach function and pass it a function with the parameter of post
+4. create another constant named storedTitle and set it equal to _.lowerCase(post.title)
+5. using an if statement compare both of the constants we just declaired locally in our app.get. if it evaluates to true res.render('post',
+   {title : post.title, content: post.content,
+6. create a post.ejs file and place it in the views folder
+7. use <%=title%> and <%=content%> to render the blog title and content into the post.ejs file. 
+
+EXPLINATION:Whats going on here? we are basiaclly looping through our entire posts array and if the title one of our posts equals the requested title we will 
+render send that part of the posts array to the post.ejs file which we will render there using ejs. 
+
+ADDING DYNAMIC LINKS 
+
+1. Add a link with an anchor tag with the href that has "/posts/" then use an ejs tag to load in the title like so: <%= post.title %> INSIDE the href quotes.   
+
