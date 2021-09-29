@@ -45,3 +45,17 @@ R- read
 6. then use the callback function and pass it the name of the collection
 7. Finally in our client.connect function call our findDocuments and pass it db and a void function. 
 8. In the function call client.close() to close our connection after reading in our data. 
+
+U - update 
+** look to the documentation for other methods on updating database, this is just one **
+1. In your mongo shell type db.collectionName.updateOne({},{}) 
+2. In our first collection, we will place the key value pair that selects the SPECIFIC document we want to update (best way is to choose the _id: ObjectId("####'))
+3. In our second collection, we will place the action that we want our update to take. The options are as follows:
+    1. $set: - Adds new fields to documents.
+    2. $unset:- Removes/excludes fields from documents.
+    3. $replaceWith: - Replaces the input document with the specified document.
+4. Inside our second collection we will create another collection with the key value pair that we want to perform this action on. 
+
+D - delete 
+1. In the mongo shell type out db.collectionName.deleteOne({})
+2. inside the collection pass in the key value pair of the document you want to delete (best way is to use the _id) 
