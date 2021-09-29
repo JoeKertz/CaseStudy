@@ -1,0 +1,47 @@
+In this post, we will explore Mongo Database along with Mongoose and cover all basic CRUD operations. But first, we will demonstrate the complexity of setting up
+Mongo database using the MongoDriver. 
+
+Sign-up 
+1. Go to mongodb.com and sign up for an account. 
+**install mongosh on the root directory of your system 
+
+Database setup
+1. Create a project folder and an app.js file in that folder. 
+2. terminal npm init to initialize npm
+3. install mongodb from npm 
+4. require mongodb add .MongoClient to end and be sure to set it equal to MongoClient
+5. require assert 
+6. start mongod from the terminal at the home directory.
+7.  in a new tab from the terminal use "mongo" to start the mongo shell 
+8. in our app.js, create a const url and set it to "mongodb://localhost:27017"
+9. in our app.js, create a constant dbName and set it to a string, this will be the name of our database. 
+10. creat a new client by setting a const client = new MongoClient(url) 
+11. **optional** {useNewUrlParser:true}
+12. attached the connect method to our client and pass it a function with a perameter of error. 
+13. inside this function attach the equal method to our assert and pass it null and error - this will assess if errors are equal to null which means our server is 
+    connected
+14. log out to the console that you have sucessfully connected to the server 
+15. also inside the same function create a constant called db and set it to client.db(dbName)
+If everything is setup correctly, when you run node app.js your success log should be read out to the console
+
+C - Create 
+1. create a constatnt called insertDocuments and set it equal to a function with the parameters of db and callback. 
+2. within this function create another constant called collection and set it to db.collection("_____"); filling in your collection name you want to create. 
+3. then call collection.insertMany([], function(err,result){});
+4. in our array (the first paramater of insertMany, we will place our documents. Each document is encased in {} and filled with key value pairs. Sepparated
+   by commas. 
+5. in our err result function we can use assert.equal to set parameters for inserting our data (ie. there must be # documents) then callback(result);
+6. in our client.connect place  insertDocuments(db, function () {client.close();
+If everything is done correctly, when you run node app.js and then use the mongo shell to show our databases, select our database, show our collections then display 
+them using db.collectionName.find()
+
+R- read
+1. create a constant called findDocuments
+2. set it equal to a function with the perameters of db and callback.
+3. inside this function, declare a constant called collection and set it equal to db.collection('_____'); creating a collection with the name youve filled in. 
+**if the collection name doenst exist it will be created and return an empty colleciton**
+4. then call collection.find({}) to go through the entire collection then add the .toArray(function(err, _____ ){ filling in the name of the collection. 
+5. inside this function set assert.equal(err,null); to check if there are any errors when the data is being passed into the array. if not log "found the following records"
+6. then use the callback function and pass it the name of the collection
+7. Finally in our client.connect function call our findDocuments and pass it db and a void function. 
+8. In the function call client.close() to close our connection after reading in our data. 
